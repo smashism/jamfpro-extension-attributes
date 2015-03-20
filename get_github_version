@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#
+# checks for github.app on machine
+# using version integer rather than name
+# intended for scoping updates (with patchoo)
+# last updated 2015-03-20
+#
+
+if [ -f "/Applications/Github.app/Contents/Info.plist" ] ; then
+	VERSION=$( defaults read "/Applications/Github.app/Contents/Info.plist" CFBundleVersion )
+else
+	VERSION="Not installed."
+fi
+
+echo "<result>$VERSION</result>"
