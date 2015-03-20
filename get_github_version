@@ -4,6 +4,7 @@
 # checks for github.app on machine
 # using version integer rather than name
 # intended for scoping updates (with patchoo)
+# by github.com/smashism
 # last updated 2015-03-20
 #
 
