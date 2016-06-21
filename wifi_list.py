@@ -1,4 +1,8 @@
 #!/usr/bin/python
+
+# thanks to @frogor for help with the pythons
+# who am I kidding he basically wrote this
+
 import plistlib
 import sys
 
