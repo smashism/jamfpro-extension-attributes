@@ -1,0 +1,15 @@
+#!/bin/bash
+# checks for manual or automatic update checks from MAU
+# results can be used to change settings to encourge better update behavior
+# by smashism on github, 2016-08-17
+# last update 2016-08-17
+
+loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+
+HowToCheck=$(defaults read /Users/$loggedInUser/Library/Preferences/com.microsoft.autoupdate2.plist HowToCheck)
+
+if [ "$HowToCheck" ]; then
+      echo "<result>$HowToCheck</result>"
+else
+      echo "<result>Not Installed</result>"
+fi
