@@ -12,13 +12,12 @@
 #
 ###
 
-# Get current user.
-# loggedInUser=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
-
-if [ -d "/Applications/Microsoft Word.app" ]; then
+if [ -d "/Applications/Microsoft Word.app" ] && [ -d "/Applications/Microsoft Office 2011/Microsoft Word.app" ]; then
+ echo "<result>Both 2011 & 2016 Installed: $(defaults read /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app/Contents/Info.plist CFBundleVersion) & $(defaults read /Applications/Microsoft\ Word.app/Contents/Info.plist CFBundleVersion)</result>"
+elif [ -d "/Applications/Microsoft Word.app" ]; then
  echo "<result>Office 2016: $(defaults read /Applications/Microsoft\ Word.app/Contents/Info.plist CFBundleVersion)</result>"
-elif [-d "Applications/Microsoft Office 2011/Microsoft Word.app" ]; then
+elif [ -d "/Applications/Microsoft Office 2011/Microsoft Word.app" ]; then
  echo "<result>Office 2011: $(defaults read /Applications/Microsoft\ Office\ 2011/Microsoft\ Word.app/Contents/Info.plist CFBundleVersion)</result>"
 else
-echo "<result>Not installed.</result>"
+ echo "<result>Not installed.</result>"
 fi
