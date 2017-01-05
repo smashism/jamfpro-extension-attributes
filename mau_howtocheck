@@ -1,10 +1,17 @@
 #!/bin/bash
-# checks for manual or automatic update checks from MAU
-# results can be used to change settings to encourge better update behavior
-# by smashism on github, 2016-08-17
-# last update 2016-08-17
 
-loggedInUser=`python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");'`
+###
+#
+#            Name:  MAU_HowToCheck.sh
+#     Description:  This EA for Jamf Pro Servers checks for the HowToCheck setting
+#                   on a Mac with Office installed. Useful as a Smart Computer
+#                   Group for scoping policies and configuration profiles.
+#          Author:  Dr. Emily Kausalik (drkausalik@gmail.com)
+#         Created:  2016-08-17
+#
+###
+
+loggedInUser=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
 
 HowToCheck=$(defaults read /Users/$loggedInUser/Library/Preferences/com.microsoft.autoupdate2.plist HowToCheck)
 
