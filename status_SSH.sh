@@ -10,9 +10,9 @@
 #            Note:  This is designed to be an EA for Jamf Pro.
 #          Author:  Emily Kausalik
 #         Created:  2016-12-15
-#   Last Modified:  2016-12-15
+#   Last Modified:  2017-09-05
 #
 ###
 
-ssh_status=$(/usr/sbin/systemsetup -getremotelogin)
+ssh_status=$(/usr/sbin/systemsetup -getremotelogin | grep -o 'On\|Off')
 echo "<result>$ssh_status</result>"
