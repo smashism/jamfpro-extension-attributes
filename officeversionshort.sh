@@ -8,15 +8,15 @@
 #                   reports nothing. Designed for use with AutoPkg Office testing policies.
 #          Author:  Emily Kausalik
 #         Created:  2018-01-18
+#         Updated:  2018-01-19
+#            Note:  Changed output to match formatting from macadmins.software/versions.xml
 #
 ###
 
 if [ -f "/Applications/Microsoft Word.app/Contents/Info.plist" ] ; then
-    VERSION=$( defaults read "/Applications/Microsoft Word.app/Contents/Info.plist" CFBundleShortVersionString )
+    echo "<result>$( defaults read "/Applications/Microsoft Word.app/Contents/Info.plist" CFBundleShortVersionString ).0</result>"
 elif [ -f "/Applications/Microsoft Outlook.app/Contents/Info.plist" ] ; then
-    VERSION=$( defaults read "/Applications/Microsoft Outlook.app/Contents/Info.plist" CFBundleShortVersionString )
+    echo "<result>$( defaults read "/Applications/Microsoft Outlook.app/Contents/Info.plist" CFBundleShortVersionString ).0</result>"
 else
-    VERSION=" "
+    echo "<result> </result>"
 fi
-
-echo "<result>$VERSION</result>"
