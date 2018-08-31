@@ -2,11 +2,11 @@
 
 ###
 #
-#            Name:  appstore_appleid.sh
+#            Name:  mau_version.sh
 #     Description:  Extentsion attribute that checks for the presence of the Microsoft
 #                   Auto-Update app and reports the version. If the app is not installed,
 #                   "Not installed." is reported.
-#          Author:  Emily Kausalik (drkausalik@gmail.com)
+#          Author:  Emily KW
 #         Created:  2016-10-13
 #
 ###
