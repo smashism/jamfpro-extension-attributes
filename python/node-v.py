@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 '''
-Name:           nove-v.py
-Description:    Check for existence of NodeJS, and get the node version
+Name:           node-v.py
+Description:    Check for existence of NodeJS, and get the node_version
                 number if detected.
 Note:           Thanks to @chilcote for unearth and #python-beginners
                 for helping me learn how to do teh pythonz.
-Author:         Emily KW (emilykausalik@gmail.com)
+Author:         Emily Kausalik (emilykausalik@gmail.com)
 Created:        2018-10-30
 '''
 
@@ -30,12 +30,14 @@ def fact():
 
         result, _ = proc.communicate()
 
-# Note: This return takes off the v on the front of the version number.
-#       If you want the result to include the v (e.g., v10.0.0), remove the
-#       [1:] from the result. Otherwise, the [1:] returns everything starting
-#       with the second character (after the v, so just the digits.)
+        # Note: This next line takes off the v on the front of the version number.
+        #       If you want the result to include the v (e.g., v10.0.0), remove line 38.
+        #       Otherwise, the [1:] returns everything starting with the second character
+        #       (after the v, so just the digits.)
 
-    return {factoid: result[1:]}
+        result = result[1:]
+
+    return {factoid: result}
 
 
 if __name__ == '__main__':
