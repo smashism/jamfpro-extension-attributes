@@ -1,6 +1,12 @@
 #!/usr/local/bin/managed_python3
 
-# Roll your own organizational python3: https://github.com/macadmins/python
+'''
+Name:           uptime.py3
+Description:    Check the uptime of a Mac.
+Note:           Roll your own organizational python3: https://github.com/macadmins/python
+Author:         github.com/smashism
+Created:        2021-12-13
+'''
 
 import plistlib
 import subprocess
