@@ -12,7 +12,7 @@ Updated:        2022-01-27
 
 import subprocess
 
-path = "/Applications/Atom.app/Contents/MacOS/Atom"
+path = "/Applications/Self Service.app/Contents/MacOS/Self Service"
 proc = subprocess.Popen(['mdls', '-name', 'kMDItemLastUsedDate', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 out,err = proc.communicate()
 out = out.decode('UTF-8')
