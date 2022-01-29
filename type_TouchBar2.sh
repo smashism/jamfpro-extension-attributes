@@ -3,10 +3,10 @@
 ###
 #
 #            Name:  type_TouchBar.sh
-#     Description:  Check for presense of Touch Bar Agent to see if a machine has 
-#                   a Touch Bar or not. Results can then be used to create a smart 
+#     Description:  Check for presense of Touch Bar Agent to see if a machine has
+#                   a Touch Bar or not. Results can then be used to create a smart
 #                   group based on status.
-#          Author:  Emily Kausalik (drkausalik@gmail.com)
+#          Author:  github.com/smashism
 #         Created:  2016-12-15
 #   Last Modified:  2016-12-15
 #

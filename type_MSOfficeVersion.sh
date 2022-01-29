@@ -4,9 +4,9 @@
 #
 #            Name:  version_MSOffice.sh
 #     Description:  Checks for presense of different Word apps (one for Office 2011,
-#                   the other 2016) and reports version string. Results can be used 
+#                   the other 2016) and reports version string. Results can be used
 #                   to create smart group based on app version/type.
-#          Author:  Emily Kausalik (drkausalik@gmail.com)
+#          Author:  github.com/smashism
 #         Created:  2016-12-20
 #   Last Modified:  2016-12-20
 #

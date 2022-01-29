@@ -8,7 +8,7 @@
 #                   MacDiagnosticTool.app and reports it. If not installed, emojis (that are tested
 #                   to load in a JSS version 9.98 or higher in Chrome. Not tested on Windows or in
 #                   Safari. We're not animals.
-#          Author:  Emily Kausalik (drkausalik@gmail.com)
+#          Author:  github.com/smashism
 #         Created:  2017-06-23
 #
 ###

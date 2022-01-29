@@ -8,12 +8,12 @@
 #            Note:  Results for local accounts is currently unknown.
 # Original Author:  Justin Workman (justinworkman on Jamf Nation)
 #         Created:  2013-05-31
-#     Modified By:  Emily Kausalik
-#   Last Modified:  2017-02-07 
+#     Modified By:  github.com/smashism
+#   Last Modified:  2022-01-29
 #
 ###
 
-liu=$( python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");' )
+liu=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
 la=$(ls /Users | grep $liu)
 if [ "$liu" = "$la" ]; then
 echo "<result>Mobile</result>"

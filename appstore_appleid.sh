@@ -8,14 +8,14 @@
 #                   and prints it out for display on the computer record in the JSS.
 #            Note:  This is a replacement for com.apple.storeagent.plist which no longer
 #                   exists on Sierra (10.12.x).
-#          Author:  Emily Kausalik (drkausalik@gmail.com)
+#          Author:  github.com/smashism
 #         Created:  2017-01-18
-#   Last Modified:  2017-01-18
+#   Last Modified:  2022-01-19
 #
 ###
 
 # Get currently logged-in user.
-LOGGED_IN_USER=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; import sys; username = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]; username = [username,""][username in [u"loginwindow", None, u""]]; sys.stdout.write(username + "\n");')
+LOGGED_IN_USER=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
 
 # Read com.apple.commerce.plist
 APPLE_ID=$(/usr/libexec/PlistBuddy -c "Print :PrimaryAccount:0:1:identifier" /Users/$LOGGED_IN_USER/Library/Preferences/com.apple.commerce.plist)

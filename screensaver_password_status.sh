@@ -3,9 +3,10 @@
 #
 # script by emily k @ volusion 2014-06-10
 # check for user’s screensaver login screen preferences
+# updated 2022-01-29
 #
 
-currentUser=`ls -l /dev/console | cut -d " " -f 4`
+currentUser=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/Name :/ { print $3 }' )
 
 status=`defaults read "/Users/$currentUser/Library/Preferences/com.apple.screensaver.plist" askForPassword`
 
@@ -15,6 +16,6 @@ elif [ "$status" == "1" ]; then
     result="True"
 else
     result="Not set."
-fi    
+fi
 
 echo "<result>$result</result>"
