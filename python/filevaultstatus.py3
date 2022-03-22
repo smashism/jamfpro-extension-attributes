@@ -47,6 +47,11 @@ def fact():
         if 'progress' in result:
             result = result.split('\n')[1]
 
+        '''Check for Filevault status on newer versions of macOS,
+        ignore line about deferral for cleaner EA results'''
+        if 'Deferred' in result:
+            result = result.split('\n')[0]
+
     except (IOError, OSError):
         result = 'Unknown'
 
